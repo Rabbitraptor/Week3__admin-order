@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week3 Admin Order</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            // dropdown open/close
+            $(".dropdown__btn, .dropdown__btn input").click(function(){
+                $(this).parents(".dropdown").toggleClass("is-open");
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="logo">Shoptime</div>
+        <div class="header-nav">
+            <div class="nav-list">
+                <a href="index.html" class="nav-list__item">HOME</a>
+                <a href="orders.html" class="nav-list__item is-selected">ORDERS</a>
+                <a href="product.html" class="nav-list__item">PRODUCT</a>
+            </div>
+        </div>
+        <div class="manager">ADMIN</div>
+    </div>
+
+    <div class="main">
+        <div class="main-header">
+            <div class="status-changer">
+                <div class="dropdown">
+                    <label class="dropdown__btn">
+                        <input type="checkbox">
+                        <i class="fas fa-square"></i>
+                        <i class="fas fa-caret-down"></i>
+                    </label>
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item is-selected">Select All</li>
+                        <li class="dropdown__item">Unselect All</li>
+                        <li class="dropdown__item">Paid</li>
+                        <li class="dropdown__item">Unpaid</li>
+                        <li class="dropdown__item">Shipping</li>
+                        <li class="dropdown__item">Done</li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <label class="dropdown__btn">
+                        <input type="checkbox">
+                        <i class="fas fa-tags"></i>
+                    </label>
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">Change Status to...</li>
+                        <li class="dropdown__item">Paid</li>
+                        <li class="dropdown__item">Unpaid</li>
+                        <li class="dropdown__item">Shipping</li>
+                        <li class="dropdown__item">Done</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="edit-detail">
+                <div class="dropdown">
+                    <div class="dropdown__btn">
+                    <span>EDIT SECTION</span>
+                    <i class="fas fa-caret-down"></i>
+                    </div>
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <i></i> Order ID
+                        </li>
+                        <li class="dropdown__item">
+                            <i></i> Customer
+                        </li>
+                        <li class="dropdown__item">
+                            <i></i> Product List
+                        </li>
+                        <li class="dropdown__item">
+                            <i></i> Total
+                        </li>
+                        <li class="dropdown__item">
+                            <i></i> Add to Cart
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="orders-manage">
+            <div class="list">
+                <div class="list-sort">
+                    <div class="type col-customer">Customer</div>
+                    <div class="type col-products">Product list</div>
+                    <div class="type col-total">Total</div>
+                    <div class="type col-addtime">Add to Cart</div>
+                    <div class="type col-outtime">Check-Out</div>
+                    <div class="type col-address">Address</div>
+                    <div class="type col-states">Status</div>
+                </div>
+                <div class="item">
+                    <div class="type col-customer">
+                        <label for="">
+                            <input type="checkbox">
+                            <div><i class="fas fa-square"></i></div>
+                            
+                            <span>Alexandera Mirre</span>
+                        </label>
+                    </div>
+                    <div class="type col-products">
+                        <div class="col-products-event">
+                            <span>Dress</span>
+                            <div>
+                                <span>$1,099</span>
+                                <span>1</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="type col-total">$1,099</div>
+                    <div class="type col-addtime">
+                        <span>2018/06/08</span>
+                        <span>13:39</span>
+                    </div>
+                    <div class="type col-outtime">
+                        <span>2018/06/08</span>
+                        <span>16:30</span>
+                    </div>
+                    <div class="type col-address">3F., No.57, Ln. 14, Meilong Rd., Longtan Dist., Taoyuan City 325, Taiwan (R.O.C.)</div>
+                    <div class="type col-states">status</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+// Colors
+// ----------------------------
+// the components color
+$alert : #D0021B;
+$in-progress : #F5A623;
+$is-done : #4A90E2;
+$is-success : #7ED321;
+$disabled: #9B9B9B;
+
+
+// the layout color
+$background : #f2f2f2;
+$list-divide : #EBEBEB;
+$grey-4 : #757575;
+$grey-3 : #c8c8c8;
+$grey-2 : #e1e1e1;
+$grey-1 : #f2f2f2;
+$black : #000;
+$white : #fff;
+
+
+
+// Settings
+// ----------------------------
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $background;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+// Components 元件類
+// ----------------------------
+// navigations 導航欄
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    // .nav-list__item 
+    &__item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0 24px;
+        color: $disabled;
+        cursor: pointer;
+
+        &:hover { color: $white; }
+
+        &.is-selected {
+            color: $white;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+
+// dropdown 下拉式選單
+.dropdown {
+    position: relative;
+
+    .dropdown__btn {
+        padding: 0 8px;
+        cursor: pointer;
+
+        i {
+            padding: 0 8px;
+            color: $black;
+        }
+    }
+
+    .dropdown__list {
+        position: absolute;
+        right: 8px;
+        display: none;
+        flex-direction: column;
+        border-radius: 2px;
+        box-shadow: 1px 2px 10px 0 #9B9B9B;
+        margin-top: 8px;
+        background-color: $white;
+        color: $black;
+    }
+
+    .dropdown__item {
+        display: flex;
+        justify-content: center;
+        padding: 8px 30px;
+        white-space: nowrap; 
+        cursor: pointer;
+
+        &:hover,
+        &.is-selected {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    // .dropsown.is-open
+    &.is-open {
+        .dropdown__list {
+            display: flex;
+        }
+    }
+}
+
+
+// 訂單預覽
+// .orders-preview (in latest orders)
+.orders-preview {
+    max-width: 500px;
+    padding: 16px 0;
+
+    .orders__item {
+        display: flex; 
+        flex-direction: row;
+        padding: 8px 0;
+        border-bottom: 1px solid #EBEBEB;
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        img {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            background-position: 50%;
+            background-size: cover;
+        }
+
+        // .orders__item-info
+        &-info {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            padding: 8px 20px;
+            padding-right: 0;
+            color: $disabled;
+
+            i { 
+                font-size: 12px; 
+                margin-right: 4px;
+            }
+
+            .info-title {
+                color: $black;
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 16px;
+            }
+
+            .info-time {
+                display: flex;
+                align-items: center;
+                margin: 4px 0;
+
+                span + span { margin-left: 10px; }
+            }
+
+            .info-costumer {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        // .orders__item-price
+        &-price {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            .value {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+
+// list
+.list {
+
+    .type {
+        flex: 1 0 auto;
+        font-weight: 700;
+    }
+
+    // .list-sort
+    &-sort {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+
+        .type {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .col-customer{
+        label {
+            display: flex;
+            flex-direction: row;
+        }
+
+        div {
+            flex: 0 0 auto;
+            display: inline;
+            
+            i {
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+    }
+}
