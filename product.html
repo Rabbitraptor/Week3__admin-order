@@ -23,15 +23,15 @@
             });
             // add is open
             $(".popup-btn").click(function(){
-                $(this).parents(".other-behavior").toggleClass("is-open");
+                $(".add,.mask").toggleClass("is-open");
             });
             // add is cancel
             $(".add__header .fa-times").click(function(){
-                $(this).parents(".other-behavior").removeClass("is-open");
+                $(".add,.mask").removeClass("is-open");
             });
             // add is cancel
             $(".add__cancel").click(function(){
-                $(this).parents(".other-behavior").removeClass("is-open");
+                $(".add,.mask").removeClass("is-open");
             });
         });
     </script>
@@ -94,155 +94,6 @@
                         <i class="fas fa-trash-alt"></i>
                     </div>
                 </div>
-                <div class="mask"></div>
-
-                <!-- add -->
-                <div class="add-position">
-                    <div class="add">
-
-                        <!-- add__header -->
-                        <div class="add__header">
-                            <div class="add__container">ADD NEW PRODUCT</div>
-                            <div class="add__container">
-                                <i class="fas fa-times"></i>
-                            </div>
-                        </div>
-                
-                        <!-- add__body -->
-                        <div class="add__body">
-                
-                            <div class="add__container">
-                                <label class="add__upload">
-                                    <input type="file">
-                                    <div class="add__upload-inner">
-                                        <div><i class="fas fa-cloud-upload-alt"></i></div>
-                                        <div>Drag an image or click here to upload...</div>
-                                    </div>
-                                </label>
-                                <div class="add__imgs">
-                                    <div class="add__row">
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="add__row">
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="add__row">
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                        <div class="add__imgs-inner">
-                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div class="add__container">
-                                <div class="add__wrap">
-                                    <div class="add__discrip">
-                                        <div class="add__heading">Product Discription</div>
-                                        <div class="add__row">
-                                            <input type="text" placeholder="Your Product Title In Here">
-                                        </div>
-                                        <div class="add__row">
-                                            <textarea cols="30" rows="10" placeholder="Your Product Discription In Here"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="add__discrip">
-                                        <div class="add__heading">Price</div>
-                                        <div class="add__row">
-                                            <div class="add__field">
-                                                <div class="add__field-title">
-                                                    <span>Original</span>
-                                                </div>
-                                                <input type="text" class="add__field-value">
-                                            </div>
-                                            <div class="add__field">
-                                                <div class="add__field-title">
-                                                    <span>Discount</span>
-                                                </div>
-                                                <input type="text" class="add__field-value">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="add__discrip">
-                                        <div class="add__heading">Specification</div>
-                                        <div class="add__row">
-                                            <div class="add__field">
-                                                <div class="add__field-title">
-                                                    <span>Size</span>
-                                                </div>
-                                                <input type="text" class="add__field-value">
-                                            </div>
-                                            <div class="add__field">
-                                                <div class="add__field-title">
-                                                    <span>Color</span>
-                                                </div>
-                                                <input type="text" class="add__field-value">
-                                            </div>
-                                            <div class="add__field">
-                                                <div class="add__field-title">
-                                                    <span>Inventory</span>
-                                                </div>
-                                                <input type="text" class="add__field-value">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="other-behavior">
-                                        <div class="behavior">
-                                            <a class="behavior__btn">
-                                                <span>ADD NEW SPECIFICATION</span>
-                                                <i class="fas fa-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- add__footer -->
-                        <div class="add__footer">
-                            <div class="other-behavior">
-                                <div class="behavior">
-                                    <div class="add__btn add__publish">
-                                        <span>PUBLISH</span>
-                                    </div>
-                                </div>
-                                <div class="behavior">
-                                    <div class="add__btn add__save">
-                                        <span>SAVE</span>
-                                    </div>
-                                </div>
-                                <div class="behavior">
-                                    <div class="add__btn add__cancel">
-                                        <span>CANCEL</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
             </div>
         </div>
 
@@ -654,6 +505,152 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- add -->
+        <div class="add">
+
+            <!-- add__header -->
+            <div class="add__header">
+                <div class="add__container">ADD NEW PRODUCT</div>
+                <div class="add__container">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+    
+            <!-- add__body -->
+            <div class="add__body">
+    
+                <div class="add__container">
+                    <label class="add__upload">
+                        <input type="file">
+                        <div class="add__upload-inner">
+                            <div><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div>Drag an image or click here to upload...</div>
+                        </div>
+                    </label>
+                    <div class="add__imgs">
+                        <div class="add__row">
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                        </div>
+                        <div class="add__row">
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                        </div>
+                        <div class="add__row">
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                            <div class="add__imgs-inner">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsOH73xdG4z5zJ_UlwuZY6298A18fgcKrvq1iFd7lCllDQqSjSg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="add__container">
+                    <div class="add__wrap">
+                        <div class="add__discrip">
+                            <div class="add__heading">Product Discription</div>
+                            <div class="add__row">
+                                <input type="text" placeholder="Your Product Title In Here">
+                            </div>
+                            <div class="add__row">
+                                <textarea cols="30" rows="10" placeholder="Your Product Discription In Here"></textarea>
+                            </div>
+                        </div>
+                        <div class="add__discrip">
+                            <div class="add__heading">Price</div>
+                            <div class="add__row">
+                                <div class="add__field">
+                                    <div class="add__field-title">
+                                        <span>Original</span>
+                                    </div>
+                                    <input type="text" class="add__field-value">
+                                </div>
+                                <div class="add__field">
+                                    <div class="add__field-title">
+                                        <span>Discount</span>
+                                    </div>
+                                    <input type="text" class="add__field-value">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add__discrip">
+                            <div class="add__heading">Specification</div>
+                            <div class="add__row">
+                                <div class="add__field">
+                                    <div class="add__field-title">
+                                        <span>Size</span>
+                                    </div>
+                                    <input type="text" class="add__field-value">
+                                </div>
+                                <div class="add__field">
+                                    <div class="add__field-title">
+                                        <span>Color</span>
+                                    </div>
+                                    <input type="text" class="add__field-value">
+                                </div>
+                                <div class="add__field">
+                                    <div class="add__field-title">
+                                        <span>Inventory</span>
+                                    </div>
+                                    <input type="text" class="add__field-value">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="other-behavior">
+                            <div class="behavior">
+                                <a class="behavior__btn">
+                                    <span>ADD NEW SPECIFICATION</span>
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- add__footer -->
+            <div class="add__footer">
+                <div class="other-behavior">
+                    <div class="behavior">
+                        <div class="add__btn add__publish">
+                            <span>PUBLISH</span>
+                        </div>
+                    </div>
+                    <div class="behavior">
+                        <div class="add__btn add__save">
+                            <span>SAVE</span>
+                        </div>
+                    </div>
+                    <div class="behavior">
+                        <div class="add__btn add__cancel">
+                            <span>CANCEL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mask"></div>
 
         <!-- Main-Footer -->
         <div class="main-footer">

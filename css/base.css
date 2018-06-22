@@ -7,7 +7,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  min-width: 1000px; }
 
 ul, li {
   list-style: none;
@@ -319,17 +320,10 @@ table {
   width: 15%; }
 
 .table-order-manage .th-product-list {
-  width: 15%; }
-
-.table-order-manage .th-total {
-  width: 10%; }
-
-.table-order-manage .th-addtime,
-.table-order-manage .th-outtime {
-  width: 8%; }
+  width: 16%; }
 
 .table-order-manage .th-address {
-  width: 20%; }
+  width: 12%; }
 
 .table-product-manage .is-selected {
   background-color: #c8c8c8; }
@@ -345,10 +339,15 @@ table {
 .table-product-manage .th-status {
   width: 25%; }
 
+.table-product-manage .th-inventory {
+  width: 30%; }
+
 .cell .dropdown {
   display: inline-block;
   border-radius: 4px;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 100%;
+  max-width: 180px; }
   .cell .dropdown__btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -359,7 +358,9 @@ table {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10%;
+    width: 100%;
+    max-width: 180px;
     color: #fff; }
     .cell .dropdown__btn span {
       text-transform: uppercase; }
@@ -371,7 +372,7 @@ table {
       padding-left: 10px; }
   .cell .dropdown__list {
     left: 0;
-    right: auto; }
+    right: 0; }
   .cell .dropdown.is-unpaid {
     background-color: #9B9B9B; }
   .cell .dropdown.is-paid {

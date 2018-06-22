@@ -255,6 +255,12 @@
                     display: flex;
                 }
             }
+
+            &__btn {
+                label {
+                    cursor: pointer;
+                }
+            }
         }
 
         .dropdown:nth-child(2) {
@@ -299,7 +305,6 @@
                 i {
                     font-size: 14px;
                     color: #fff;
-                    border: 1px solid #000;
                 }
 
                 i + span {
@@ -308,10 +313,10 @@
             }
 
             &.is-selected {
+                background-color: $grey-1;
                 
                 i {
                     color: #000;
-                    border: 1px solid #fff;
                 }
 
                 i::before {
@@ -529,6 +534,7 @@
         padding: 0 40px;
         padding-bottom: 40px;
         background-color: $white;
+        border-top: 1px solid #fff;
 
         .other-behavior {
             display: flex;
@@ -570,20 +576,16 @@
 
 // add position
 // ----------------------------
-.add-position {
-
-    $add-width : 1280px;
-
+.add {
     display: none;
-    position: absolute;
-    top: calc(100vh - 75%);
-    left: calc(#{$add-width} - 50%);
-    z-index: 99;
-
-    .add {
-        width: $add-width;
-    }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 940px;
+    z-index: 1;
 }
+
 
 .mask {
     display: none;
@@ -593,16 +595,12 @@
     top: 0;
     bottom: 0;
     background-color: rgba(#000, 0.8);
-    z-index: 98;
 }
 
 // popup
-.other-behavior.is-open {
-    .add-position {
-        display: block;
-    }
-    .mask {
-        display: block;
-    }
+.add.is-open {
+    display: block;
 }
-
+.mask.is-open {
+    display: block;
+}
