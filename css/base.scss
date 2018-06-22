@@ -6,7 +6,7 @@ $in-progress : #F5A623;
 $is-done : #4A90E2;
 $is-success : #7ED321;
 $disabled: #9B9B9B;
-
+$input-border: rgb(169, 169, 169);
 
 // the layout color
 $background : #f2f2f2;
@@ -49,6 +49,12 @@ input[type="checkbox"] {
     background-color: inherit;
 }
 
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }
@@ -56,7 +62,8 @@ a {
 
 // Components 元件類
 // ----------------------------
-// navigations 導航欄
+// 導航欄
+// navigations 
 .nav-list {
     display: flex;
     flex-direction: row;
@@ -90,7 +97,48 @@ a {
 }
 
 
-// dropdown 下拉式選單
+// 行為按鈕
+// behavior button 
+.behavior {
+    display: flex;
+    flex-direction: row;
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: $black;
+        color: $white;
+        font-size: 14px;
+        cursor: pointer;
+
+        span, i { 
+            line-height: 1; 
+        }
+
+        span + i {
+            margin-left: 8px;
+        }
+
+        + .behavior__btn {
+            margin-left: 20px;
+        }
+    }
+
+    .alert-color {
+        background-color: $alert;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: red;
+        }
+    }
+}
+
+
+// 下拉式選單
+// dropdown 
 .dropdown {
     position: relative;
 
@@ -105,13 +153,14 @@ a {
     }
 
     .dropdown__list {
+        z-index: 1;
         position: absolute;
         right: 8px;
+        top: calc(100% + 8px);
         display: none;
         flex-direction: column;
         border-radius: 2px;
         box-shadow: 1px 2px 10px 0 #9B9B9B;
-        margin-top: 8px;
         background-color: $white;
         color: $black;
     }
@@ -139,10 +188,10 @@ a {
 }
 
 
+
 // 訂單預覽
 // .orders-preview (in latest orders)
 .orders-preview {
-    max-width: 500px;
     padding: 16px 0;
 
     .orders__item {
@@ -223,45 +272,304 @@ a {
 
 
 
-// list
-.list {
+// 表格 
+// table set
+// ---------------------------
+table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
 
-    .type {
-        flex: 1 0 auto;
-        font-weight: 700;
+    td, th {
+        padding: 10px 10px;
+        text-align: left;
+        vertical-align: top;
     }
 
-    // .list-sort
-    &-sort {
-        display: flex;
-        flex-direction: row;
+    th {
+        line-height: 1.2;
     }
 
-    .item {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
+    .td-status {
+        position: relative;
 
-        .type {
-            font-size: 14px;
-            font-weight: 400;
+        .dropdown {
+            position: absolute;
+            left: 30px;
+            bottom: 10px;
         }
     }
 
-    .col-customer{
-        label {
-            display: flex;
-            flex-direction: row;
-        }
+    td {
+        word-wrap: break-word;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-        div {
-            flex: 0 0 auto;
-            display: inline;
+        img {
+
+            $img-size: 50px;
             
-            i {
-                font-size: 16px;
-                color: #fff;
+            width: $img-size;
+            height: $img-size;
+            position: absolute;
+            margin-top: calc(-#{$img-size} / 4);
+
+            + span {
+                display: inline-block;
+                padding-left: calc(#{$img-size} + 8px);
             }
         }
     }
+
+    thead {
+        background-color: $white;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background-color: #EBEBEB;
+        }
+    }
+
+    label {
+        display: flex;
+
+        .fa-square {
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        input:checked ~ i::before {
+            content: "\f14a";
+            color: #000;
+        }
+    }
+
+
+    .padding-right {
+        padding-right: 30px;
+    }
+
+    .padding-left {
+        padding-left: 30px;
+    }
+
+
+    .cell {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+
+        &__body {
+            display: table-row-group;
+
+            .cell__row .cell__col {
+                padding-bottom: 8px;
+            }
+
+            + .cell__body .cell__row:first-child .cell__col {
+                border-top: 1px solid $white;
+                padding-top: 8px;
+            }
+        }
+
+        &__row {
+            display: table-row;
+        }
+
+        &__col {
+            display: table-cell;
+            word-wrap: break-word;
+
+            &:empty::before {
+                content: " ";
+                white-space: pre;
+            }
+        }
+
+        &__flex {
+            display: flex;
+        }
+
+        &__item {
+            word-wrap: break-word;
+            min-width: 0;
+        }
+
+        .lowlight {
+            color: $disabled;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-between {
+            justify-content: space-between;
+        }
+    }
 }
+
+
+
+// table of order-manage
+.table-order-manage {
+
+    .is-selected {
+        background-color: $grey-3;
+    }
+
+    .th-checkbox {
+        width: 35px;
+    }
+
+    .th-customer {
+        width: 15%;
+    }
+
+    .th-product-list {
+        width: 15%;
+    }
+
+    .th-total {
+        width: 10%;
+    }
+
+    .th-addtime,
+    .th-outtime {
+        width: 8%;
+    }
+
+    .th-address {
+        width: 20%; 
+    }
+
+}
+
+
+// table of product-maange
+.table-product-manage {
+
+    .is-selected {
+        background-color: $grey-3;
+    }
+
+    .th-checkbox {
+        width: 35px;
+    }
+
+    .th-original,
+    .th-discount {
+        width: 10%;
+    }
+
+    .th-product,
+    .th-status {
+        width: 25%;
+    }
+}
+
+
+
+// dropdown in table 
+// ---------------------------
+.cell {
+    .dropdown {
+        display: inline-block;
+        border-radius: 4px;
+        cursor: pointer;
+    
+        &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            color: #fff;
+            
+            span {
+                text-transform: uppercase;
+            }
+    
+            i {
+                color: #fff;
+                line-height: 1.5;
+                padding-right: 0;
+            }
+    
+            span + i {
+                padding-left: 10px;
+            }
+        }
+
+        &__list {
+            left: 0;
+            right: auto;
+        }
+
+        // orders manage color
+        // -------------------
+        &.is-unpaid {
+            background-color: $disabled;
+        }
+
+        &.is-paid {
+            background-color: $is-success;
+        }
+
+        &.is-shipping {
+            background-color: $in-progress;
+        }
+
+        &.is-done {
+            background-color: $is-done;
+        }
+
+        // product manage color
+        // --------------------
+        &.is-disabled {
+            background-color: $disabled;
+        }
+
+        &.is-published {
+            background-color: $is-success;
+        }
+
+    }
+}
+
+
+
+// Main__Footer
+// ----------------------------
+.main-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px; 
+}
+
+.page-nav {
+    display: flex;
+
+    // .page-nav-btn
+    &-btn {
+        flex: 0 0 auto;
+        line-height: 1;
+        text-align: center;
+        width: 46px;
+        padding: 16px;
+        color: #000;
+        background-color: #fff;
+        cursor: pointer;
+
+        &.is-selected,
+        &:hover {
+            color: #fff;
+            background-color: #000;
+        }
+
+        + .page-nav-btn {
+            margin-left: 2px;
+        }
+    }
+}
+
